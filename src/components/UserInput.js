@@ -44,4 +44,9 @@ class UserInput extends Component {
   }
 }
 
-export default connect()(UserInput);
+const mapStateToProps = (state) => {
+  return {users: state.users,
+          usersCount: state.users.length}
+}
+
+export default connect(mapStateToProps)(UserInput);
